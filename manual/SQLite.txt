@@ -1,0 +1,53 @@
+
+.open my_databases - відкриває або створює бд
+.mode columns - режим відображення
+.header on
+.tables - показує таблиці
+.show - поточнінастройки параметрів
+
+CREATE TABLE [TABLE_NAME] (
+    ...>    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ...>    [COLUMN_NAME] TEXT NOT NULL,
+    ...>    [COLUMN_NAME] INTEGER NOT NULL
+    ...>);
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+SELECT * FROM [TABLE_NAME]
+
+SELECT * FROM [TABLE_NAME] WHERE [col_name] IN [text_field]
+
+INSERT INTO [TABLE_NAME]
+    (col_name 1, col_name 2, col_name 3)
+    VALUES ('text_field 1', 'text_field 2', itg_field 1);
+
+UPDATE [TABLE_NAME]
+    SET [col_name 2] = [text_field 3]
+    WHERE [col_name 1] = [text_field 1]; 
+
+DELETE FROM [TABLE_NAME]
+WHERE id = 1;
+
+ALTER TABLE [TABLE_NAME]
+ADD COLUMN [COLUMN_NAME] TEXT NOT NULL;
+
+ALTER TABLE [TABLE_NAME]
+RENAME_TO [TABLE_NAME 2];
+
+DROP TABLE [TABLE_NAME];
+
+CREATE TABLE fli(
+AirPort_id INTEGER PRIMARY KEY NOT NULL,
+Origin_id INTEGER NOT NULL,
+Destination_id INTEGER NOT NULL,
+duration INTEGER NOT NULL
+);
+    
+INSERT INTO fli (Fli_ID, Origin_ID, Destination_ID) VALUES (1, 4 , 415);
+

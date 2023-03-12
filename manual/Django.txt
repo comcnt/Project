@@ -1,0 +1,43 @@
+200 - OK
+301 - Перемыщено назавжди
+403 - Заборонено
+404 - Не знайдено
+500 - Внутрішня помилка сервера
+
+pip3 install Django
+django-admin startproject PROJECT-NAME
+manage.py - використовується для взаємодії з проєктами
+PROJECT_NAME/settings.py - налаштування конфігурації
+PROJECT_/urls.py - URL, які можна відвідати
+
+python manage.py runserver - запуск вбудованого web сервера
+python manage.py startapp APP_NAME - додати застосунок
+
+https://prometheus.org.ua/cs50web_2021/notes3.html
+
+конфігурація views.py застосунку
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Створіть свої вікна тут.
+
+def index(request):
+    return HttpResponse("Hello, world!")
+__________________________________________
+конфігурація urls.py застосунку
+ from django.urls import path
+ from . import views
+
+ urlpatterns = [
+     path("", views.index, name="index")
+ ]
+ __________________________________________
+ конфігурація urls.py проєкту
+ from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('hello/', include("hello.urls"))
+]
+__________________________________________
